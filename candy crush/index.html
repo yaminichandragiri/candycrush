@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Crush</title>
+    <style>
+        body {
+            background: url(./images/background.jpg) no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Add animations for candy removal and sliding */
+@keyframes slideCandy {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+img {
+    animation: slideCandy 0.3s ease-out;
+}
+
+
+        #board {
+            width: 90vw;
+            height: 90vw; 
+            max-width: 450px; 
+            max-height: 450px; 
+            background-color: rgba(254, 152, 172, 0.579);
+            border: 5px solid slategray;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        #board img {
+            width: 11.11%; 
+            height: 11.11%; 
+            box-sizing: border-box;
+            cursor: pointer; 
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem; 
+            }
+
+            #board {
+                width: 90vw;
+                height: 90vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Score: <span id="score">0</span></h1>
+    <div id="board"></div>
+    <script src="app.js"></script>
+</body>
+</html>
